@@ -4,18 +4,17 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --ink:       #0e0e0e;
-  --surface:   #161618;
-  --card:      #1e1e21;
-  --border:    #2e2e32;
-  --red:       #c0392b;
-  --red-dim:   rgba(192,57,43,0.12);
-  --off:       #f4f1ec;
+  --ink:       #080c12;
+  --surface:   #0e1520;
+  --card:      #141d2e;
+  --border:    #1e2d44;
+  --blue:      #1478d4;
+  --blue-dim:  rgba(20,120,212,0.12);
+  --blue-mid:  rgba(20,120,212,0.22);
   --white:     #ffffff;
-  --muted:     #6e6e76;
-  --soft:      #a0a0ab;
-  --teal:      #0e7490;
-  --green:     #30d158;
+  --muted:     #5a6e88;
+  --soft:      #8a9bb0;
+  --gray:      #3a4a5e;
   --nav-h:     64px;
 }
 
@@ -38,7 +37,7 @@ img { display: block; max-width: 100%; }
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  background: rgba(14,14,14,0.92);
+  background: rgba(8,12,18,0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -54,7 +53,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.08em;
   color: var(--white);
 }
-.nav-logo span { color: var(--red); }
+.nav-logo span { color: var(--blue); }
 
 .nav-links {
   display: flex;
@@ -74,18 +73,35 @@ img { display: block; max-width: 100%; }
 .nav-links a:hover,
 .nav-links a.active { color: var(--white); }
 
+.nav-chatir {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft) !important;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s !important;
+}
+.nav-chatir:hover {
+  background: var(--blue-dim) !important;
+  border-color: var(--blue) !important;
+  color: var(--white) !important;
+}
+
 .nav-cta {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--red) !important;
-  border: 1px solid var(--red);
+  color: var(--blue) !important;
+  border: 1px solid var(--blue);
   padding: 8px 18px;
   transition: background 0.2s, color 0.2s !important;
 }
 .nav-cta:hover {
-  background: var(--red) !important;
+  background: var(--blue) !important;
   color: var(--white) !important;
 }
 
@@ -128,7 +144,7 @@ img { display: block; max-width: 100%; }
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--blue);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -139,7 +155,7 @@ img { display: block; max-width: 100%; }
   display: block;
   width: 32px;
   height: 2px;
-  background: var(--red);
+  background: var(--blue);
   flex-shrink: 0;
 }
 
@@ -166,27 +182,6 @@ img { display: block; max-width: 100%; }
   margin: 0 48px;
 }
 
-/* ── Stat pill ── */
-.stat-pill {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.stat-pill-n {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 52px;
-  line-height: 1;
-  color: var(--red);
-  letter-spacing: 0.02em;
-}
-.stat-pill-l {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 /* ── Buttons ── */
 .btn {
   display: inline-flex;
@@ -206,11 +201,11 @@ img { display: block; max-width: 100%; }
 .btn:hover { border-color: var(--white); color: var(--white); }
 
 .btn-primary {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--blue);
+  border-color: var(--blue);
   color: var(--white);
 }
-.btn-primary:hover { background: #a93226; border-color: #a93226; }
+.btn-primary:hover { background: #0f62b8; border-color: #0f62b8; }
 
 /* ── Footer ── */
 .footer {
@@ -227,7 +222,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.08em;
   color: var(--muted);
 }
-.footer-logo span { color: var(--red); }
+.footer-logo span { color: var(--blue); }
 
 .footer-copy {
   font-size: 11px;
@@ -235,15 +230,24 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.08em;
 }
 
+.footer-chatir {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.footer-chatir:hover { opacity: 1; }
+
 /* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade-up {
-  animation: fadeUp 0.7s ease both;
-}
+.fade-up { animation: fadeUp 0.7s ease both; }
 .fade-up-1 { animation-delay: 0.1s; }
 .fade-up-2 { animation-delay: 0.2s; }
 .fade-up-3 { animation-delay: 0.35s; }
