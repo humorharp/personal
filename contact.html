@@ -53,8 +53,8 @@
   gap: 20px;
 }
 
-.path:first-child { border-top: 3px solid var(--red); }
-.path:last-child  { border-top: 3px solid var(--teal); }
+.path:first-child { border-top: 3px solid var(--blue); }
+.path:last-child  { border-top: 3px solid var(--blue); }
 
 .path-icon { font-size: 32px; }
 
@@ -92,8 +92,8 @@
   display: flex;
   gap: 10px;
 }
-.path-list li::before { content: '·'; color: var(--red); flex-shrink: 0; }
-.path:last-child .path-list li::before { color: var(--teal); }
+.path-list li::before { content: '·'; color: var(--blue); flex-shrink: 0; }
+.path:last-child .path-list li::before { color: var(--blue); }
 
 .path-cta {
   display: inline-flex;
@@ -110,19 +110,19 @@
 }
 
 .path:first-child .path-cta {
-  border-color: var(--red);
-  color: var(--red);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 .path:first-child .path-cta:hover {
-  background: var(--red);
+  background: var(--blue);
   color: var(--white);
 }
 .path:last-child .path-cta {
-  border-color: var(--teal);
-  color: var(--teal);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 .path:last-child .path-cta:hover {
-  background: var(--teal);
+  background: var(--blue);
   color: var(--white);
 }
 
@@ -155,7 +155,7 @@
 }
 
 .direct-value a {
-  color: var(--red);
+  color: var(--blue);
   transition: opacity 0.2s;
 }
 .direct-value a:hover { opacity: 0.75; }
