@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Christopher Harper</title>
+<meta name="description" content="Nearly a decade in EMS operations. EMT, FTO, Operations Supervisor. Builder, process improver, and self-described calm in the storm.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── Page hero ── */
+.page-hero {
+  padding: 80px 48px 0;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 10vw, 120px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  margin-bottom: 0;
+}
+.page-hero h1 .dim { color: rgba(255,255,255,0.1); }
+
+/* ── Bio section ── */
+.bio-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 80px;
+  align-items: start;
+}
+
+.bio-main h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.3;
+  margin-bottom: 28px;
+}
+
+.bio-main h2 em { font-style: italic; color: var(--soft); }
+
+.bio-p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--soft);
+  margin-bottom: 20px;
+}
+
+.bio-p strong { color: var(--white); font-weight: 500; }
+
+.timeline {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+.tl-item:last-child { border-bottom: 1px solid var(--border); }
+
+.tl-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  padding-top: 2px;
+}
+
+.tl-role {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.tl-org { font-size: 12px; color: var(--muted); }
+
+/* Sidebar */
+.bio-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+.sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 22px 20px;
+}
+
+.sidebar-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+
+.sidebar-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-list li {
+  font-size: 12.5px;
+  color: var(--soft);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sidebar-list li::before {
+  content: '·';
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+/* ── Divider ── */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 48px;
+}
+
+/* ── PUM Section ── */
+.pum-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+.pum-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.pum-intro h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.92;
+}
+
+.pum-intro p {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--soft);
+}
+
+/* PUM grid */
+.pum-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.pum-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 28px 26px;
+}
+
+.pum-card.full { grid-column: 1 / -1; }
+
+.pum-card-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.pum-card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+.pum-card-body {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--soft);
+}
+
+.pum-card-body strong { color: var(--white); font-weight: 500; }
+
+.pum-card-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pum-card-list li {
+  font-size: 13px;
+  color: var(--soft);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+
+.pum-card-list li::before {
+  content: '→';
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Quote block */
+.quote-block {
+  background: var(--red);
+  padding: 48px;
+  margin: 0 48px;
+}
+
+.quote-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.45;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.quote-attr {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 60px 24px 0; }
+  .bio-section { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 64px; }
+  .bio-sidebar { position: static; }
+  .tl-item { grid-template-columns: 80px 1fr; }
+  .pum-section { padding: 64px 24px; }
+  .pum-intro { grid-template-columns: 1fr; gap: 24px; }
+  .pum-grid { grid-template-columns: 1fr; }
+  .pum-card.full { grid-column: 1; }
+  .quote-block { margin: 0 24px; padding: 36px 28px; }
+  .section-divider { margin: 0 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Christopher <span>Harper</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-hero fade-up">
+    <div class="eyebrow">About</div>
+    <h1>CHRIS<br><span class="dim">HARPER</span></h1>
+  </div>
+
+  <!-- Bio -->
+  <div class="bio-section">
+    <div class="bio-main">
+      <h2>Nearly a decade in EMS.<br><em>A career built on making operations work.</em></h2>
+
+      <p class="bio-p">I started as an EMT and spent close to ten years at <strong>Royal Ambulance</strong> in Santa Clara County — working my way from the field to Field Training Officer to Operations Supervisor. Along the way I learned that the biggest problems in EMS aren't clinical — they're operational. Safety systems that don't learn. Documentation that creates billing delays. Supply chains nobody's looked at in years. Processes held together by institutional memory instead of actual design.</p>
+
+      <p class="bio-p">I've always been drawn to the <strong>gap between how things are and how they could work</strong>. That instinct pushed me toward Lean and DMAIC methodology, toward building dashboards that didn't exist, toward rewriting SOPs that weren't working. The three case studies on this site are the clearest evidence of what that instinct produces when given the right scope and support.</p>
+
+      <p class="bio-p">I'm now building <strong>ChatIR</strong>, an AI-powered incident investigation platform for EMS — and consulting with agencies that want to move the needle on safety and operational efficiency. I'm also open to the right full-time role at the intersection of EMS, public safety technology, and operations leadership.</p>
+
+      <p class="bio-p">I'm based in <strong>San Jose, CA</strong>. I'm married with two young kids, which is the real reason I care about doing work that actually matters.</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2014–2015</div>
+          <div>
+            <div class="tl-role">EMT</div>
+            <div class="tl-org">Royal Ambulance · Santa Clara County</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2015–2018</div>
+          <div>
+            <div class="tl-role">Field Training Officer</div>
+            <div class="tl-org">Royal Ambulance · Santa Clara County</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2018–2024</div>
+          <div>
+            <div class="tl-role">Operations Supervisor</div>
+            <div class="tl-org">Royal Ambulance · Santa Clara County</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024–2025</div>
+          <div>
+            <div class="tl-role">Branch Manager / Program Manager</div>
+            <div class="tl-org">24 Hour Home Care · Concord, CA</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025–</div>
+          <div>
+            <div class="tl-role">Founder + EMS Operations Consultant</div>
+            <div class="tl-org">ChatIR · Independent Practice</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Methodology</div>
+        <ul class="sidebar-list">
+          <li>DMAIC / Lean Six Sigma</li>
+          <li>A3 Problem Solving</li>
+          <li>GEMBA Walks</li>
+          <li>Fishbone / Ishikawa</li>
+          <li>HFACS</li>
+          <li>PDCA / POWER</li>
+          <li>5 Whys</li>
+          <li>SCoPE Framework</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Tools &amp; Platforms</div>
+        <ul class="sidebar-list">
+          <li>ESO Solutions</li>
+          <li>StreetEagle / Samsara</li>
+          <li>Traumasoft</li>
+          <li>Looker Studio</li>
+          <li>Google Forms / Workspace</li>
+          <li>Excel / PowerPivot</li>
+          <li>Next.js / Supabase</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Focus Areas</div>
+        <ul class="sidebar-list">
+          <li>Fleet safety &amp; accident reduction</li>
+          <li>Incident investigation systems</li>
+          <li>Documentation quality &amp; billing</li>
+          <li>FTO program design</li>
+          <li>EVOC / driver training</li>
+          <li>Operational dashboards</li>
+          <li>Process improvement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- Quote -->
+  <div class="quote-block" style="margin-top: 80px;">
+    <div class="quote-text">"If your actions create a legacy that inspires others to dream more, learn more, do more, and become more, then you are an excellent leader."</div>
+    <div class="quote-attr">— Dolly Parton &nbsp;·&nbsp; Personal north star</div>
+  </div>
+
+  <!-- Personal User Manual -->
+  <div class="pum-section">
+    <div class="pum-intro">
+      <div>
+        <div class="eyebrow">Working With Me</div>
+        <h2>PERSONAL<br>USER<br>MANUAL</h2>
+      </div>
+      <p>I've learned that clarity about how you work is a gift to the people around you. This is mine — honest, unfiltered, and as useful as I can make it for anyone thinking about working with or hiring me.</p>
+    </div>
+
+    <div class="pum-grid">
+      <div class="pum-card">
+        <div class="pum-card-icon">⚙️</div>
+        <div class="pum-card-title">My Style</div>
+        <div class="pum-card-body">
+          <p><strong>Problem-solver and process improver.</strong> I'm energized by fixing things and finding better ways to do them. I have a natural tendency to "solution jump" — I've been working on taking time to understand the root cause before proposing fixes. When you bring me a challenge, expect me to dig into the "why" before we touch the "how."</p>
+          <p style="margin-top:12px;"><strong>Calm in the storm.</strong> I aim to be the stable, steady presence during high-pressure situations. This is both my strength and something that can be draining for me. What looks like distance is usually focus.</p>
+          <p style="margin-top:12px;"><strong>Empowerment-focused.</strong> I'd rather teach someone to fish than hand them a fish. I find deep satisfaction in developing people and watching them grow into problems I used to carry myself.</p>
+        </div>
+      </div>
+
+      <div class="pum-card">
+        <div class="pum-card-icon">❤️</div>
+        <div class="pum-card-title">What I Value</div>
+        <ul class="pum-card-list">
+          <li><span><strong>Root cause thinking.</strong> Let's fix it right the first time — not treat symptoms.</span></li>
+          <li><span><strong>Service.</strong> I've been helped by others in hard moments. Paying it forward drives everything I do.</span></li>
+          <li><span><strong>Team development.</strong> Nothing makes me happier than watching someone I've mentored step up and own something.</span></li>
+          <li><span><strong>Continuous improvement.</strong> There's always a better way. I value people who embrace that rather than defend the status quo.</span></li>
+          <li><span><strong>Family.</strong> My family is my "why." Everything professional is downstream of wanting to create a better life for them.</span></li>
+        </ul>
+      </div>
+
+      <div class="pum-card">
+        <div class="pum-card-icon">💬</div>
+        <div class="pum-card-title">How to Communicate With Me</div>
+        <ul class="pum-card-list">
+          <li><span><strong>Be direct.</strong> I appreciate honest, straightforward communication. If there's a problem, let's name it.</span></li>
+          <li><span><strong>Give me processing time.</strong> I think through problems thoroughly before responding. Don't expect an instant answer on complex issues — but I'm working on it.</span></li>
+          <li><span><strong>Give me the full picture.</strong> When bringing me a problem, help me understand the context. I want to solve the right problem, not just the visible one.</span></li>
+          <li><span><strong>Questions aren't criticism.</strong> When I ask a lot of questions, I'm trying to understand — not questioning your competence.</span></li>
+        </ul>
+      </div>
+
+      <div class="pum-card">
+        <div class="pum-card-icon">⚡</div>
+        <div class="pum-card-title">What I Don't Have Patience For</div>
+        <ul class="pum-card-list">
+          <li><span><strong>Preventable problems.</strong> Issues that could have been avoided with proper planning feel like wasted energy that could have gone somewhere meaningful.</span></li>
+          <li><span><strong>Surface-level solutions.</strong> Band-aids don't fix systems. If we're going to fix something, let's fix it right.</span></li>
+          <li><span><strong>Constant task-switching.</strong> I do my best work in focused blocks. Fragmented attention produces fragmented results.</span></li>
+        </ul>
+      </div>
+
+      <div class="pum-card full">
+        <div class="pum-card-icon">🤔</div>
+        <div class="pum-card-title">What People Misunderstand About Me</div>
+        <div class="pum-card-body" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;">
+          <div>
+            <strong style="color:var(--white); display:block; margin-bottom:8px;">"Calm" doesn't mean "don't care."</strong>
+            When I'm being the steady presence during chaos, some people interpret this as distance or indifference. I care deeply — I'm just trying to be the stable force everyone can rely on.
+          </div>
+          <div>
+            <strong style="color:var(--white); display:block; margin-bottom:8px;">I'm not "too serious."</strong>
+            Yes, I document everything and like following processes. But one of my personal success metrics is making the people around me laugh. Structure and fun aren't mutually exclusive — good process creates more space for both.
+          </div>
+          <div>
+            <strong style="color:var(--white); display:block; margin-bottom:8px;">High expectations = belief in potential.</strong>
+            When I push people, it's because I see what they're capable of. I'm not demanding because I think you can't do it — I'm pushing because I know you can.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">Christopher <span>Harper</span></div>
+    <div class="footer-copy">© 2026 &nbsp;·&nbsp; EMS Operations Consultant</div>
+  </footer>
+
+</div>
+</body>
+</html>

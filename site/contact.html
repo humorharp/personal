@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Christopher Harper</title>
+<meta name="description" content="Consulting inquiries, hiring conversations, and general outreach. Based in San Jose, CA.">
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 48px 96px;
+  min-height: calc(100vh - var(--nav-h) - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 10vw, 120px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  margin-bottom: 24px;
+}
+.contact-hero h1 .dim { color: rgba(255,255,255,0.1); }
+
+.contact-hero-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--soft);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 64px;
+}
+
+/* Two paths */
+.paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 64px;
+}
+
+.path {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.path:first-child { border-top: 3px solid var(--red); }
+.path:last-child  { border-top: 3px solid var(--teal); }
+
+.path-icon { font-size: 32px; }
+
+.path-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.path-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.path-body {
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: var(--soft);
+  flex: 1;
+}
+
+.path-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.path-list li {
+  font-size: 12.5px;
+  color: var(--soft);
+  display: flex;
+  gap: 10px;
+}
+.path-list li::before { content: '·'; color: var(--red); flex-shrink: 0; }
+.path:last-child .path-list li::before { color: var(--teal); }
+
+.path-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 24px;
+  border: 1px solid;
+  transition: background 0.2s, color 0.2s;
+  align-self: flex-start;
+}
+
+.path:first-child .path-cta {
+  border-color: var(--red);
+  color: var(--red);
+}
+.path:first-child .path-cta:hover {
+  background: var(--red);
+  color: var(--white);
+}
+.path:last-child .path-cta {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.path:last-child .path-cta:hover {
+  background: var(--teal);
+  color: var(--white);
+}
+
+/* Direct contact */
+.direct {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.direct-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 24px 22px;
+}
+
+.direct-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.direct-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.direct-value a {
+  color: var(--red);
+  transition: opacity 0.2s;
+}
+.direct-value a:hover { opacity: 0.75; }
+
+.direct-sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .contact-wrap { padding: 60px 24px 80px; }
+  .paths, .direct { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Christopher <span>Harper</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta active">Get in Touch</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="contact-wrap">
+
+    <div class="contact-hero fade-up">
+      <div class="eyebrow">Contact</div>
+      <h1>LET'S<br><span class="dim">TALK.</span></h1>
+      <p class="contact-hero-sub">Whether you're looking for a consultant, a collaborator, or the right ops hire — I'd like to hear from you.</p>
+    </div>
+
+    <div class="paths fade-up fade-up-2">
+      <div class="path">
+        <div class="path-icon">📋</div>
+        <div class="path-label">For Organizations</div>
+        <div class="path-title">Consulting &amp; Fractional Ops</div>
+        <p class="path-body">I work with EMS agencies, healthcare operations teams, and public safety organizations on fleet safety, documentation improvement, process redesign, and operational analytics. Engagements range from a scoped 30-day audit to ongoing fractional ops director work.</p>
+        <ul class="path-list">
+          <li>30-Day EMS Safety Audit — $7,500 flat</li>
+          <li>Fractional Ops Director — $3–6K/month</li>
+          <li>EVOC / Driver Safety Workshop — $2–4K/day</li>
+          <li>Process Improvement Engagement — custom</li>
+        </ul>
+        <a href="mailto:chris@example.com?subject=Consulting Inquiry" class="path-cta">Start a Conversation →</a>
+      </div>
+
+      <div class="path">
+        <div class="path-icon">💼</div>
+        <div class="path-label">For Employers</div>
+        <div class="path-title">Full-Time Opportunities</div>
+        <p class="path-body">I'm open to the right full-time role — ideally at the intersection of EMS/public safety technology, operations leadership, or civic tech. I bring domain depth that's hard to hire for, and a track record of building things that work and last.</p>
+        <ul class="path-list">
+          <li>EMS / public safety SaaS (ESO, Mark43)</li>
+          <li>Civic tech and government innovation</li>
+          <li>Operations / program management</li>
+          <li>Product roles with domain requirements</li>
+        </ul>
+        <a href="mailto:chris@example.com?subject=Opportunity" class="path-cta">Reach Out →</a>
+      </div>
+    </div>
+
+    <div class="direct fade-up fade-up-3">
+      <div class="direct-item">
+        <div class="direct-label">Email</div>
+        <div class="direct-value"><a href="mailto:chris@example.com">chris@example.com</a></div>
+        <div class="direct-sub">Best for first contact</div>
+      </div>
+      <div class="direct-item">
+        <div class="direct-label">LinkedIn</div>
+        <div class="direct-value"><a href="https://linkedin.com/in/christopherharper" target="_blank">linkedin.com/in/christopherharper</a></div>
+        <div class="direct-sub">Connect and message</div>
+      </div>
+      <div class="direct-item">
+        <div class="direct-label">Location</div>
+        <div class="direct-value">San Jose, CA</div>
+        <div class="direct-sub">Remote-first · Bay Area available</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">Christopher <span>Harper</span></div>
+    <div class="footer-copy">© 2026 &nbsp;·&nbsp; EMS Operations Consultant</div>
+  </footer>
+</div>
+</body>
+</html>
