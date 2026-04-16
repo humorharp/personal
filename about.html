@@ -136,6 +136,98 @@
   margin: 0 48px;
 }
 
+/* ── How I Think ── */
+.think-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+.think-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.think-intro h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.92;
+}
+
+.think-intro-body {
+  padding-top: 12px;
+}
+
+.think-intro-body p {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--soft);
+  margin-bottom: 16px;
+}
+
+.think-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.think-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 28px 26px;
+}
+
+.think-card.wide { grid-column: 1 / -1; }
+
+.think-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.think-card-body {
+  font-size: 14px;
+  line-height: 1.78;
+  color: var(--soft);
+}
+
+.think-card-body strong { color: var(--white); font-weight: 500; }
+
+.think-list {
+  list-style: none;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.think-list li {
+  font-size: 13.5px;
+  color: var(--soft);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+.think-list li::before {
+  content: '→';
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
 /* ── PUM Section ── */
 .pum-section {
   max-width: 1080px;
@@ -254,6 +346,10 @@
   .bio-section { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 64px; }
   .bio-sidebar { position: static; }
   .tl-item { grid-template-columns: 80px 1fr; }
+  .think-section { padding: 64px 24px; }
+  .think-intro { grid-template-columns: 1fr; gap: 24px; }
+  .think-grid { grid-template-columns: 1fr; }
+  .think-card.wide { grid-column: 1; }
   .pum-section { padding: 64px 24px; }
   .pum-intro { grid-template-columns: 1fr; gap: 24px; }
   .pum-grid { grid-template-columns: 1fr; }
@@ -375,6 +471,52 @@
           <li>Operational dashboards</li>
           <li>Process improvement</li>
         </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- How I Think -->
+  <div class="think-section">
+    <div class="think-intro">
+      <div>
+        <div class="eyebrow">How I Think</div>
+        <h2>FAILURE IS A<br>SYSTEMS<br>PROBLEM.</h2>
+      </div>
+      <div class="think-intro-body">
+        <p>Most organizations treat failure as a people problem. Someone made a mistake, someone gets retrained or disciplined, and the organization moves on — until it happens again.</p>
+        <p>That model doesn't work in high-stakes environments. I know because I spent a decade in one.</p>
+        <p>I'm less interested in who messed up and more interested in what conditions made that mistake likely, why the system didn't catch it, and how to prevent it at scale. That perspective comes from real operational experience — not theory.</p>
+      </div>
+    </div>
+
+    <div class="think-grid">
+      <div class="think-card">
+        <div class="think-card-label">The Question I Always Ask</div>
+        <div class="think-card-body">
+          <p>Not <strong>"who made the mistake?"</strong> — but <strong>"what made this mistake inevitable?"</strong></p>
+          <p style="margin-top:14px;">Every time I investigated an incident at Royal Ambulance, the interesting answer was never in the immediate cause. It was in the conditions that existed before the person even showed up for that shift — the training gap, the policy that hadn't been updated, the technology that couldn't catch what it needed to catch.</p>
+        </div>
+      </div>
+
+      <div class="think-card">
+        <div class="think-card-label">What That Looks Like in Practice</div>
+        <ul class="think-list">
+          <li><span>Investigate incidents to find system-level causes, not just individual ones</span></li>
+          <li><span>Build feedback loops so frontline reality reaches leadership strategy</span></li>
+          <li><span>Design training and policy around actual failure patterns, not assumptions</span></li>
+          <li><span>Create measurement systems that sustain improvements after the project ends</span></li>
+          <li><span>Ask "how do we prevent this at scale?" before "how do we fix this case?"</span></li>
+        </ul>
+      </div>
+
+      <div class="think-card wide">
+        <div class="think-card-label">Why This Matters for ChatIR</div>
+        <div class="think-card-body">
+          <p>ChatIR exists because most EMS incident reporting systems are built to document what happened — not to understand why. The report gets filed, the box gets checked, and nothing changes. <strong>That's a systems design failure, not a reporting failure.</strong></p>
+          <p style="margin-top:14px;">The platform I'm building is designed around the idea that incident data is only valuable if it produces organizational learning. Better analysis. Faster pattern recognition. Fewer repeat failures. The same thinking that drove my work at Royal, now built into a tool that scales beyond a single supervisor.</p>
+        </div>
       </div>
     </div>
   </div>
