@@ -1,0 +1,10 @@
+{
+  "name": "Christopher Harper",
+  "short_name": "CH",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" }
+  ],
+  "theme_color": "#1478d4",
+  "background_color": "#080c12",
+  "display": "standalone"
+}
