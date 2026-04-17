@@ -1,1 +1,690 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Christopher Harper</title>
+<meta name="description" content="Three documented operational improvement projects with measurable outcomes across fleet safety, documentation quality, and supply chain efficiency.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── Page hero ── */
+.page-hero {
+  padding: 80px 48px 64px;
+  max-width: 1080px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 9vw, 110px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  margin-bottom: 24px;
+}
+
+.page-hero h1 .dim { color: rgba(255,255,255,0.12); }
+
+.page-hero-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--soft);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* ── Case study block ── */
+.case-block {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Header row */
+.case-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.case-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.case-num-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.case-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
+
+.case-meta {
+  text-align: right;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.9;
+  white-space: nowrap;
+}
+.case-meta strong { display: block; color: var(--soft); font-size: 12px; margin-bottom: 2px; }
+
+/* Stats row */
+.case-stats {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 48px;
+}
+.case-stats-4 { grid-template-columns: repeat(4, 1fr); }
+.case-stats-3 { grid-template-columns: repeat(3, 1fr); }
+
+.case-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px 20px;
+}
+.case-stat.highlight { border-color: currentColor; }
+
+.case-stat-n {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.case-stat-l {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Two col text */
+.case-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.col-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.col-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--soft);
+}
+
+/* Actions grid */
+.actions-grid {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 40px;
+}
+.actions-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.actions-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.action-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px 18px;
+}
+
+.action-n {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.action-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 10px;
+}
+
+.action-text {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* Impact cards */
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.impact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 22px 20px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.impact-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: var(--card);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.impact-metric {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.impact-text {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--soft);
+}
+.impact-text em { color: var(--muted); font-style: italic; font-size: 11.5px; }
+
+/* Lifecycle bar */
+.lifecycle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+
+.lifecycle-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.lifecycle-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.lc-step {
+  flex: 1;
+  min-width: 80px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 12px 8px;
+  text-align: center;
+}
+.lc-step.pain {
+  background: rgba(20,120,212,0.15);
+  border-color: rgba(20,120,212,0.3);
+}
+
+.lc-icon { font-size: 18px; margin-bottom: 5px; }
+.lc-name {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.lc-step.pain .lc-name { color: #7a9fc0; }
+.lc-arrow { font-size: 14px; color: var(--border); flex-shrink: 0; display: flex; align-items: center; padding: 0 2px; }
+.lifecycle-note { margin-top: 12px; font-size: 11px; font-style: italic; color: var(--muted); }
+
+/* Result callout */
+.result-callout {
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.result-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.result-h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.result-p {
+  font-size: 13px;
+  line-height: 1.72;
+  color: rgba(255,255,255,0.6);
+}
+
+.pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.pdf-link:hover { color: var(--white); border-color: var(--soft); }
+
+/* Color themes per case study */
+.cs-1 { --cs-color: var(--blue); }
+.cs-1 .case-num-dot { background: var(--blue); }
+.cs-1 .case-h2 { color: var(--white); }
+.cs-1 .case-stat-n { color: var(--blue); }
+.cs-1 .action-n { color: var(--blue); }
+.cs-1 .result-callout { background: var(--ink); border: 1px solid var(--border); border-left: 4px solid var(--blue); }
+.cs-1 .result-big { color: var(--blue); }
+.cs-1 .col-label { color: var(--blue); border-color: var(--blue); }
+
+.cs-2 { --cs-color: var(--blue); }
+.cs-2 .case-num-dot { background: var(--blue); }
+.cs-2 .case-stat-n { color: var(--blue); }
+.cs-2 .action-n { color: var(--blue); }
+.cs-2 .result-callout { background: var(--blue); border: none; }
+.cs-2 .result-big { color: #fff; }
+.cs-2 .result-h3 { color: #fff; }
+.cs-2 .col-label { color: var(--blue); border-color: rgba(20,120,212,0.3); }
+.cs-2 .impact-metric { color: var(--blue); }
+
+.cs-3 { --cs-color: var(--soft); }
+.cs-3 .case-num-dot { background: var(--soft); }
+.cs-3 .case-stat-n { color: var(--soft); }
+.cs-3 .action-n { color: var(--soft); }
+.cs-3 .result-callout { background: var(--surface); border: 1px solid var(--soft); }
+.cs-3 .result-big { color: var(--soft); }
+.cs-3 .col-label { color: var(--soft); border-color: rgba(20,120,212,0.25); }
+
+@media (max-width: 768px) {
+  .page-hero { padding: 60px 24px 48px; }
+  .case-block { padding: 60px 24px; }
+  .case-header { grid-template-columns: 1fr; }
+  .case-meta { text-align: left; }
+  .case-stats-4, .case-stats-3 { grid-template-columns: 1fr 1fr; }
+  .case-cols, .impact-grid { grid-template-columns: 1fr; }
+  .actions-grid-4, .actions-grid-3 { grid-template-columns: 1fr 1fr; }
+  .result-callout { grid-template-columns: 1fr; }
+  .result-big { font-size: 72px; }
+  .lc-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Christopher <span>Harper</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="https://chatir.io" target="_blank" class="nav-chatir">ChatIR ↗</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- Page hero -->
+  <div class="page-hero fade-up">
+    <div class="eyebrow">Selected Work</div>
+    <h1>THREE<br>PROJECTS.<br><span class="dim">THREE</span> OUTCOMES.</h1>
+    <p class="page-hero-sub">Each project below is documented with real methodology, real numbers, and real operational impact — not estimates or projections.</p>
+  </div>
+
+  <!-- ── Case Study 01 ── -->
+  <div class="case-block cs-1" id="accidents">
+    <div class="case-header">
+      <div>
+        <div class="case-num">
+          <div class="case-num-dot"></div>
+          Case Study 01 &nbsp;·&nbsp; Fleet Safety &nbsp;·&nbsp; DMAIC / Lean Six Sigma
+        </div>
+        <h2 class="case-h2">AMBULANCE<br>ACCIDENT<br>REDUCTION</h2>
+      </div>
+      <div class="case-meta">
+        <strong>Royal Ambulance</strong>
+        Santa Clara County, CA<br>
+        Feb 2022 – Early 2024<br>
+        Lean Council: Feb 2023<br><br>
+        Methodology: DMAIC<br>
+        Tools: ESO · Samsara<br>
+        Concurrent with COVID recovery
+      </div>
+    </div>
+
+    <div class="case-stats case-stats-4">
+      <div class="case-stat">
+        <div class="case-stat-n">63%</div>
+        <div class="case-stat-l">Total Reduction Achieved</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">1.0→0.37</div>
+        <div class="case-stat-l">Incidents per 1,000 Trips</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">$100K+</div>
+        <div class="case-stat-l">Annual Direct Savings</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">3</div>
+        <div class="case-stat-l">Parallel Intervention Tracks</div>
+      </div>
+    </div>
+
+    <div class="case-cols">
+      <div>
+        <div class="col-label">The Problem</div>
+        <p class="col-text">Royal Ambulance was running at 1 incident per every 1,000 transport trips across Santa Clara County — driving vehicle repair costs, increasing legal liability, and pulling units out of rotation. Investigations were reactive and siloed, with no feedback loop into training or policy. No systematic process existed to identify root causes across incident types.</p>
+      </div>
+      <div>
+        <div class="col-label">The Approach</div>
+        <p class="col-text">As Operations Supervisor, I led a formal DMAIC improvement project sponsored at the executive level. This project launched in early 2022 — during the tail end of COVID surges — when staffing shortages, crew fatigue, and disrupted training pipelines were all contributing to elevated accident rates. Data was collected from ESO incident reports and driver behavior data from StreetEagle — the fleet's existing GPS platform. Root causes were identified via fishbone analysis and GEMBA walks with field crews across multiple counties. Countermeasures were deployed across three parallel tracks — training, policy, and technology — simultaneously rather than sequentially.</p>
+      </div>
+    </div>
+
+    <div class="actions-grid actions-grid-4">
+      <div class="action-card">
+        <div class="action-n">01</div>
+        <div class="action-title">EVOC Training</div>
+        <div class="action-text">Updated training content to directly reflect ESO incident data patterns. Targeted problem areas identified in report analysis rather than delivering a generic refresher.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">02</div>
+        <div class="action-title">FTO Program</div>
+        <div class="action-text">Standardized FTO curriculum. Built daily driving evaluation via Google Forms. Mandated Day 1 supervised driving — previously inconsistent across the county.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">03</div>
+        <div class="action-title">Policy Revision</div>
+        <div class="action-text">Rewrote SOP 122. Shifted from punitive model to coaching-and-improvement framework. Standardized investigation procedures. Consistent accountability statewide.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">04</div>
+        <div class="action-title">Technology</div>
+        <div class="action-text">Identified limitations of StreetEagle (GPS/location only) and built the business case to upgrade to Samsara — a full safety platform with driver behavior scoring, harsh event detection, and camera integration. Piloted driver cameras fleet-wide. Now fleet standard.</div>
+      </div>
+    </div>
+
+    <div class="result-callout">
+      <div class="result-big">63%</div>
+      <div>
+        <div class="result-h3">Accident rate reduced from 1.0 to 0.37 per 1,000 trips — more than doubling the original 30% target, with improvement sustained and continuing after the project closed.</div>
+        <p class="result-p">The project delivered hundreds of thousands in direct savings through reduced repair costs, lower insurance premiums, and improved unit availability across Santa Clara County. The gains held — and kept improving — because the system was designed to sustain itself through embedded dashboards, updated SOPs, and a cultural shift in how incidents were investigated and learned from.</p>
+      </div>
+    </div>
+
+    <a href="01_Harper_Accident_Reduction.pdf" class="pdf-link" target="_blank">↓ Download Full Case Study PDF</a>
+  </div>
+
+  <!-- ── Case Study 02 ── -->
+  <div class="case-block cs-2" id="docs">
+    <div class="case-header">
+      <div>
+        <div class="case-num">
+          <div class="case-num-dot"></div>
+          Case Study 02 &nbsp;·&nbsp; Documentation Quality &nbsp;·&nbsp; 6-Month Engagement
+        </div>
+        <h2 class="case-h2">ePCR ADDENDA<br>REDUCTION</h2>
+      </div>
+      <div class="case-meta">
+        <strong>Royal Ambulance</strong>
+        Santa Clara County, CA<br>
+        Late 2021 – Mid 2022<br>
+        Peak COVID period<br><br>
+        Scale: 36,000 trips/year<br>
+        Tools: Traumasoft · Google Forms<br>
+        Looker Studio Dashboard
+      </div>
+    </div>
+
+    <div class="case-stats case-stats-4">
+      <div class="case-stat">
+        <div class="case-stat-n">360</div>
+        <div class="case-stat-l">Addenda Eliminated / Year</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">3%→2%</div>
+        <div class="case-stat-l">Error Rate Reduction</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">100hrs</div>
+        <div class="case-stat-l">Supervisor Time Recovered</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">150hrs</div>
+        <div class="case-stat-l">Crew Time Freed / Year</div>
+      </div>
+    </div>
+
+    <div class="case-cols">
+      <div>
+        <div class="col-label">The Problem</div>
+        <p class="col-text">A 3% ePCR addenda rate sounds minor — until you do the math. At 36,000 annual transports, that's 1,080 addenda per year, each triggering a multi-step loop: locate the crew, send the addendum, wait for completion, supervisor review, resubmit to billing, repeat if still rejected. This project launched during the Delta and Omicron waves — when crews were exhausted, short-staffed, and working outside their normal routines. Documentation errors spike in exactly those conditions. Addenda consumed roughly 15% of the operations supervisor's workday, every day.</p>
+      </div>
+      <div>
+        <div class="col-label">The Hidden Cost</div>
+        <p class="col-text">The documentation error itself wasn't the problem — it was the cascade it triggered. Beyond the staff time consumed, each addendum was reported to delay billing by 21 days, even when resolved same-day. At scale, this represented a significant drag on both operational capacity and revenue cycle speed that wasn't being measured or managed.</p>
+      </div>
+    </div>
+
+    <div class="lifecycle">
+      <div class="lifecycle-label">The Addenda Loop — What Every Single Error Triggered</div>
+      <div class="lifecycle-steps">
+        <div class="lc-step pain"><div class="lc-icon">⚠️</div><div class="lc-name">Error Flagged</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step pain"><div class="lc-icon">🔍</div><div class="lc-name">Locate Crew</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step pain"><div class="lc-icon">📤</div><div class="lc-name">Send Addendum</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step pain"><div class="lc-icon">⏳</div><div class="lc-name">Wait for Completion</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step pain"><div class="lc-icon">🔎</div><div class="lc-name">Supervisor Review</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step pain"><div class="lc-icon">↩️</div><div class="lc-name">Resubmit to Billing</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step"><div class="lc-icon">🔁</div><div class="lc-name">Repeat if Rejected</div></div>
+        <div class="lc-arrow">›</div>
+        <div class="lc-step"><div class="lc-icon">💰</div><div class="lc-name">Billing Released</div></div>
+      </div>
+      <div class="lifecycle-note">Each step = real time from a supervisor, field crew, or billing coordinator. Multiplied by 1,080 addenda per year.</div>
+    </div>
+
+    <div class="actions-grid actions-grid-3">
+      <div class="action-card">
+        <div class="action-n">01</div>
+        <div class="action-title">Root Cause Analysis</div>
+        <div class="action-text">Identified which specific fields, call types, and crew segments were driving addenda volume. Broke the 3% into addressable patterns — not a general problem, but specific failure points with specific fixes.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">02</div>
+        <div class="action-title">Targeted Training</div>
+        <div class="action-text">Built focused training addressing the exact failure points identified — not a generic ePCR refresher. Specific enough to change documentation behavior at the source, before errors reached billing.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">03</div>
+        <div class="action-title">KPI Dashboard</div>
+        <div class="action-text">Built an addenda tracking dashboard giving supervisors real-time visibility into trends, crew patterns, and error types. Enabled early intervention. Gains became self-sustaining through embedded measurement.</div>
+      </div>
+    </div>
+
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">⏱️</div>
+        <div>
+          <div class="impact-metric">12 workdays recovered</div>
+          <div class="impact-text">Addenda consumed ~15% of the ops supervisor's day. 360 fewer addenda returned ~100 hours annually — <em>12 full workdays back to proactive operations.</em></div>
+        </div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🚑</div>
+        <div>
+          <div class="impact-metric">19 shift-equivalents freed</div>
+          <div class="impact-text">At ~25 min per addendum cycle, 360 fewer addenda = ~150 crew hours per year. <em>That's 19 shift-equivalents returned to patient care.</em></div>
+        </div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">💳</div>
+        <div>
+          <div class="impact-metric">360 trips accelerated</div>
+          <div class="impact-text">Each addendum triggered a reported 21-day billing hold. Fewer addenda = faster revenue collection on hundreds of trips per year. <em>(21-day figure reported internally; directional.)</em></div>
+        </div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">📊</div>
+        <div>
+          <div class="impact-metric">Gains sustained</div>
+          <div class="impact-text">The dashboard created visibility that didn't exist before. Supervisors could catch drift before it became a backlog. <em>The system held the improvements — no continued project attention required.</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-callout">
+      <div class="result-big">33%</div>
+      <div>
+        <div class="result-h3">360 fewer addenda per year — and all the chasing, delays, rework, and billing holds that came with them.</div>
+        <p class="result-p">250+ combined staff hours returned annually. A billing pipeline that moves faster on hundreds of previously delayed trips. A live dashboard that prevents regression. Delivered in six months through targeted training and measurement — no new systems, no major investment.</p>
+      </div>
+    </div>
+
+    <a href="02_Harper_Documentation_Quality.pdf" class="pdf-link" target="_blank">↓ Download Full Case Study PDF</a>
+  </div>
+
+  <!-- ── Case Study 03 ── -->
+  <div class="case-block cs-3" id="supply">
+    <div class="case-header">
+      <div>
+        <div class="case-num">
+          <div class="case-num-dot"></div>
+          Case Study 03 &nbsp;·&nbsp; Supply Chain &nbsp;·&nbsp; System Transition
+        </div>
+        <h2 class="case-h2">INVENTORY &amp;<br>SUPPLY CHAIN<br>OPTIMIZATION</h2>
+      </div>
+      <div class="case-meta">
+        <strong>Royal Ambulance</strong>
+        Santa Clara County, CA<br>
+        2021 – 2022<br>
+        During COVID recovery<br><br>
+        Method: Supplier analysis<br>
+        + Process redesign<br>
+        Zero operational disruption
+      </div>
+    </div>
+
+    <div class="case-stats case-stats-3">
+      <div class="case-stat">
+        <div class="case-stat-n">$50K</div>
+        <div class="case-stat-l">Direct Cost Savings</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">25%</div>
+        <div class="case-stat-l">Faster Order Processing</div>
+      </div>
+      <div class="case-stat">
+        <div class="case-stat-n">Zero</div>
+        <div class="case-stat-l">Operational Disruption</div>
+      </div>
+    </div>
+
+    <div class="case-cols">
+      <div>
+        <div class="col-label">The Context</div>
+        <p class="col-text">During a major system transition at Royal Ambulance, supply chain and inventory processes were due for overhaul. Ordering was inefficient, costs were uncontrolled, and the transition window created real risk of operational disruption if mismanaged. The temptation in transitions is to just migrate the old process — we didn't.</p>
+      </div>
+      <div>
+        <div class="col-label">The Stakes</div>
+        <p class="col-text">In EMS, supply continuity isn't optional. Units can't roll without properly stocked equipment. The challenge was achieving meaningful cost reduction and process improvement simultaneously — while keeping field operations completely uninterrupted. The transition window was the opportunity. Missing it would mean waiting years for the next one.</p>
+      </div>
+    </div>
+
+    <div class="actions-grid actions-grid-3">
+      <div class="action-card">
+        <div class="action-n">01</div>
+        <div class="action-title">Supplier Analysis</div>
+        <div class="action-text">Conducted detailed supplier analysis to identify cost reduction opportunities. Benchmarked existing contract terms and order patterns against actual field usage data to find gaps between what was being ordered and what was being used.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">02</div>
+        <div class="action-title">Workflow Redesign</div>
+        <div class="action-text">Redesigned order workflows to eliminate redundant steps and reduce processing friction. Standardized par levels and reorder triggers across all units and stations — replacing informal, inconsistent practices with a single documented standard.</div>
+      </div>
+      <div class="action-card">
+        <div class="action-n">03</div>
+        <div class="action-title">Embedded in New System</div>
+        <div class="action-text">New processes were embedded within the incoming system from day one — not retrofitted after the fact. This ensured improvements couldn't regress post-transition. Built in ongoing tracking for sustained visibility after handoff.</div>
+      </div>
+    </div>
+
+    <div class="result-callout">
+      <div class="result-big">$50K</div>
+      <div>
+        <div class="result-h3">$50,000 in direct cost savings and 25% faster order processing — achieved during an active system transition with zero operational disruption.</div>
+        <p class="result-p">By treating the transition as an improvement opportunity rather than just a migration, the project delivered lasting efficiency gains embedded in the new system from launch. Supply continuity was maintained throughout — no field impact, no unit downtime. A discipline that compounds: process improvements built into a new system don't require ongoing maintenance to sustain.</p>
+      </div>
+    </div>
+
+    <a href="03_Harper_Supply_Chain.pdf" class="pdf-link" target="_blank">↓ Download Full Case Study PDF</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">Christopher <span>Harper</span></div>
+    <a href="https://chatir.io" target="_blank" class="footer-chatir">ChatIR ↗</a>
+    <div class="footer-copy">© 2026 &nbsp;·&nbsp; EMS Operations Consultant</div>
+  </footer>
+
+</div>
+</body>
+</html>
