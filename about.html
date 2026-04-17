@@ -370,8 +370,8 @@
     <li><a href="https://chatir.io" target="_blank" class="nav-chatir">ChatIR ↗</a></li>
     <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
-  <div class="nav-hamburger" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')">
-    <span></span><span></span><span></span>
+  <div class="nav-hamburger" onclick="this.classList.toggle('open'); this.parentElement.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span>
   </div>
 </nav>
 

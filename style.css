@@ -108,7 +108,7 @@ img { display: block; max-width: 100%; }
 .nav-hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
   padding: 4px;
 }
@@ -117,7 +117,15 @@ img { display: block; max-width: 100%; }
   width: 24px;
   height: 2px;
   background: var(--white);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+/* Animate to X when open */
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
 }
 
 /* ── Page wrapper ── */
